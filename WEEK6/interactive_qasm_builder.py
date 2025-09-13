@@ -92,7 +92,6 @@ class InteractiveQASMBuilder:
 	def finalize_and_save(self):
 		self.qc.measure(range(self.n), range(self.n))
 		qasm = qiskit.qasm2.dumps(self.qc)
-		qasm = qasm.replace('include "qelib1.inc";\n', '')
 		print("\nGenerated QASM:\n")
 		print(qasm)
 
